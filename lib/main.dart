@@ -46,8 +46,8 @@ class _HlsPlayerPageState extends State<HlsPlayerPage> {
 
     // Create a VideoPlayerController pointing to the master HLS stream
     // This will use the device's Adaptive Bitrate streaming capabilities
-    _controller = VideoPlayerController.network(
-      'https://raw.githubusercontent.com/linslouis/server_m3u8_test/master/assets/hls-output/master.m3u8',
+    _controller = VideoPlayerController.networkUrl(
+      Uri.parse('https://raw.githubusercontent.com/linslouis/server_m3u8_test/master/assets/hls-output/master.m3u8'),
       formatHint: VideoFormat.hls,
     );
 
