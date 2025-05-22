@@ -31,8 +31,13 @@ class HlsPlayerPage extends StatefulWidget {
 }
 
 class _HlsPlayerPageState extends State<HlsPlayerPage> {
-  late VideoPlayerController _controller;
-  late Future<void> _initializeVideoPlayerFuture;
+  // Initialize with a dummy value to prevent late initialization errors
+  late VideoPlayerController _controller = VideoPlayerController.networkUrl(
+    Uri.parse('https://example.com/dummy.m3u8'),
+    formatHint: VideoFormat.hls,
+  );
+  // Initialize with a future that completes immediately
+  late Future<void> _initializeVideoPlayerFuture = Future.value();
   bool _hasError = false;
   final DeviceInfoPlugin _deviceInfoPlugin = DeviceInfoPlugin();
   
@@ -108,7 +113,7 @@ class _HlsPlayerPageState extends State<HlsPlayerPage> {
       formatHint: VideoFormat.hls,
     );
 
-    // Initialize the controller and store the Future for later use
+    // Initialize the controller and store the Future
     _initializeVideoPlayerFuture = _controller.initialize().then((_) {
       // Once the video has been loaded, set to loop and autoplay
       _controller.setLooping(true);
