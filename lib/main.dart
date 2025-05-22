@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
+import 'package:device_info_plus/device_info_plus.dart';
+import 'dart:io';
 
 void main() {
   runApp(const MyApp());
@@ -32,6 +34,13 @@ class _HlsPlayerPageState extends State<HlsPlayerPage> {
   late VideoPlayerController _controller;
   late Future<void> _initializeVideoPlayerFuture;
   bool _hasError = false;
+  final DeviceInfoPlugin _deviceInfoPlugin = DeviceInfoPlugin();
+  
+  // Example video playlists - replace with your actual API response
+  final Map<String, String> _playlists = {
+    'avc': 'https://raw.githubusercontent.com/linslouis/server_m3u8_test/master/assets/hls-output/master.m3u8',
+    'hevc': 'https://raw.githubusercontent.com/linslouis/server_m3u8_test/master/assets/hls-output-hevc/master.m3u8',
+  };
 
   @override
   void initState() {
@@ -39,15 +48,63 @@ class _HlsPlayerPageState extends State<HlsPlayerPage> {
     _initializePlayer();
   }
 
-  void _initializePlayer() {
+  Future<bool> _isHevcSupported() async {
+    if (Platform.isIOS) {
+      final iosInfo = await _deviceInfoPlugin.iosInfo;
+      // iOS 11.0 and above supports HEVC
+      final version = iosInfo.systemVersion.split('.');
+      if (version.isNotEmpty && int.tryParse(version[0]) != null) {
+        return int.parse(version[0]) >= 11;
+      }
+      return false;
+    } else if (Platform.isAndroid) {
+      final androidInfo = await _deviceInfoPlugin.androidInfo;
+      // Android API 29 (Android 10) and above supports HEVC
+      return androidInfo.version.sdkInt >= 29;
+    }
+    return false;
+  }
+
+  Future<void> _initializePlayer() async {
     setState(() {
       _hasError = false;
     });
 
-    // Create a VideoPlayerController pointing to the master HLS stream
-    // This will use the device's Adaptive Bitrate streaming capabilities
+    // First check if HEVC is supported
+    final bool hevcSupported = await _isHevcSupported();
+    
+    // Choose URL based on device capability
+    String videoUrl = hevcSupported ? _playlists['hevc']! : _playlists['avc']!;
+    
+    // Initialize with the selected URL
+    await _initializeWithUrl(videoUrl);
+    
+    // If HEVC failed and we tried it first, fall back to AVC
+    if (_hasError && hevcSupported) {
+      debugPrint('HEVC playback failed, falling back to AVC');
+      await _initializeWithUrl(_playlists['avc']!);
+    }
+  }
+
+  Future<void> _initializeWithUrl(String url) async {
+    // Create a local variable for tracking controller existence
+    VideoPlayerController? oldController;
+    
+    // Store the old controller if it's already been initialized
+    try {
+      oldController = _controller;
+    } catch (e) {
+      // _controller might not be initialized yet on first call
+    }
+    
+    // Dispose old controller if it exists
+    if (oldController != null) {
+      await oldController.dispose();
+    }
+
+    // Create a VideoPlayerController pointing to the selected HLS stream
     _controller = VideoPlayerController.networkUrl(
-      Uri.parse('https://raw.githubusercontent.com/linslouis/server_m3u8_test/master/assets/hls-output/master.m3u8'),
+      Uri.parse(url),
       formatHint: VideoFormat.hls,
     );
 
@@ -58,7 +115,9 @@ class _HlsPlayerPageState extends State<HlsPlayerPage> {
       _controller.play();
       // Ensure the first frame is shown after initialization
       if (mounted) {
-        setState(() {});
+        setState(() {
+          _hasError = false;
+        });
       }
       return null;
     }).catchError((error) {
@@ -102,7 +161,6 @@ class _HlsPlayerPageState extends State<HlsPlayerPage> {
                   ElevatedButton(
                     onPressed: () {
                       // Reinitialize the player on retry
-                      _controller.dispose();
                       _initializePlayer();
                     },
                     child: const Text('Retry'),
