@@ -1,50 +1,56 @@
-# Flutter HLS Video Player
+# Short Video Feed App
 
-A production-ready Flutter application that demonstrates how to implement HTTP Live Streaming (HLS) video playback using Flutter's video_player package.
+A Flutter application that implements a TikTok/Reels/Shorts style vertical video feed with advanced HLS streaming and performance optimizations.
 
 ## Features
 
-- Seamless HLS video playback with adaptive bitrate streaming
-- Clean, responsive UI with loading states
-- Proper error handling with retry functionality
-- Play/pause control with visual feedback
-- Maintains video aspect ratio for proper display
-- Handles lifecycle events (initialization, playback, disposal)
-
-## Technology Stack
-
-- **Flutter:** UI framework for cross-platform development
-- **video_player:** Plugin for video playback (uses ExoPlayer on Android, AVPlayer on iOS)
-- **HTTP Live Streaming (HLS):** Streaming protocol that adapts to network conditions
+- **Vertical swipeable feed** with fullscreen videos
+- **HLS adaptive bitrate streaming** (480p/720p/1080p) that auto-switches based on bandwidth
+- **Preview clips with seamless transition**:
+  - First loads 5-second preview at 720p
+  - Simultaneously downloads full video in background
+  - Seamlessly transitions at segment boundary
+- **Intelligent preloading**:
+  - Preloads ±2 videos around current index
+  - Uses predictive prefetch based on scroll velocity
+- **Hardware decoder pooling**:
+  - Maintains limited pool of decoders to avoid re-initialization stalls
+  - Prioritizes closest videos when managing the pool
+- **Smart buffer management**:
+  - Adjusts buffer size based on scroll velocity
+  - Deeper prebuffer on slow drags, minimal on quick flings
+- **Performance optimizations**:
+  - Efficiently swaps between preview and full video
+  - Handles orientation changes and device capabilities
+  - Supports both HEVC (H.265) and AVC (H.264) formats
 
 ## Implementation Details
 
-The application uses a single master HLS playlist URL which contains multiple quality levels. The underlying native players (ExoPlayer on Android, AVPlayer on iOS) automatically handle quality switching based on network conditions through Adaptive Bitrate Streaming.
+The app uses a modular architecture with the following components:
 
-The player is implemented as a StatefulWidget that:
-- Initializes the video controller in `initState()`
-- Properly configures looping and autoplay
-- Provides a clean UI for loading, playback, and error states
-- Handles proper resource disposal
+- **VideoItem**: Data model for video metadata
+- **VideoFeedService**: Handles API calls to fetch the video feed
+- **ReelsController**: Core controller that manages:
+  - Video preloading strategy
+  - Preview/full video swapping
+  - Decoder instance pooling
+  - Buffer size adjustments
+- **ReelsPager**: Main UI widget with vertical PageView
+- **ReelVideoPlayer**: Individual video player component
 
-## Getting Started
+## Technical Considerations
 
-1. Ensure Flutter is installed on your development machine
-2. Clone this repository
-3. Run `flutter pub get` to install dependencies
-4. Connect a device or start an emulator
-5. Run `flutter run` to launch the application
-
-## Project Structure
-
-- `lib/main.dart`: Contains the main application code and HLS player implementation
-- `pubspec.yaml`: Defines project dependencies including the video_player package
+- **Adaptive Streaming**: The app uses HLS (HTTP Live Streaming) to adapt video quality based on network conditions
+- **Codec Selection**: Automatically selects HEVC (H.265) on supported devices, falling back to AVC (H.264) on older devices
+- **Emulator Detection**: Forcibly uses AVC on emulators regardless of API level
+- **Memory Management**: Limits the number of simultaneous decoder instances to prevent OOM issues
+- **Segment Boundary Detection**: Intelligently detects segment boundaries for seamless transitions
 
 ## Requirements
 
-- Flutter 3.0.0 or higher
-- Dart 2.17.0 or higher
-- Android 4.4+ or iOS 11.0+ for device compatibility
+- Flutter 3.7+
+- iOS 11+ or Android API 21+
+- For HEVC support: iOS 11+ or Android API 29+
 
 ## License
 
