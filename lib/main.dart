@@ -70,6 +70,20 @@ class _HlsPlayerPageState extends State<HlsPlayerPage> {
     return false;
   }
 
+  Future<bool> _isEmulator() async {
+    if (Platform.isAndroid) {
+      final androidInfo = await _deviceInfoPlugin.androidInfo;
+      return androidInfo.isPhysicalDevice == false || 
+             androidInfo.model.toLowerCase().contains('emulator') ||
+             androidInfo.model.toLowerCase().contains('sdk');
+    } else if (Platform.isIOS) {
+      final iosInfo = await _deviceInfoPlugin.iosInfo;
+      return iosInfo.isPhysicalDevice == false ||
+             iosInfo.name.toLowerCase().contains('simulator');
+    }
+    return false;
+  }
+
   Future<void> _initializePlayer() async {
     setState(() {
       _hasError = false;
@@ -78,14 +92,22 @@ class _HlsPlayerPageState extends State<HlsPlayerPage> {
     // First check if HEVC is supported
     final bool hevcSupported = await _isHevcSupported();
     
+    // On emulators, forcibly use AVC regardless of API level
+    final bool isEmulator = await _isEmulator();
+    final bool shouldTryHevc = hevcSupported && !isEmulator;
+    
+    debugPrint('Device supports HEVC: $hevcSupported, Is emulator: $isEmulator');
+    
     // Choose URL based on device capability
-    String videoUrl = hevcSupported ? _playlists['hevc']! : _playlists['avc']!;
+    String videoUrl = shouldTryHevc ? _playlists['hevc']! : _playlists['avc']!;
+    
+    debugPrint('Initial video URL: $videoUrl');
     
     // Initialize with the selected URL
     await _initializeWithUrl(videoUrl);
     
     // If HEVC failed and we tried it first, fall back to AVC
-    if (_hasError && hevcSupported) {
+    if (_hasError && shouldTryHevc) {
       debugPrint('HEVC playback failed, falling back to AVC');
       await _initializeWithUrl(_playlists['avc']!);
     }
