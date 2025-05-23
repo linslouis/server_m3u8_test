@@ -2,6 +2,7 @@
   "videos": [
     {
       "id": "vid_1",
+      "thumbnail": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_1/video_1_thumb.jpg",
       "playlists": {
         "avc": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_1/hls-output/master.m3u8",
         "hevc": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_1/hls-output-hevc/master.m3u8"
@@ -9,6 +10,7 @@
     },
     {
       "id": "vid_2",
+      "thumbnail": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_2/video_2_thumb.jpg",
       "playlists": {
         "avc": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_2/hls-output/master.m3u8",
         "hevc": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_2/hls-output-hevc/master.m3u8"
@@ -16,6 +18,7 @@
     },
     {
       "id": "vid_3",
+      "thumbnail": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_3/video_3_thumb.jpg",
       "playlists": {
         "avc": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_3/hls-output/master.m3u8",
         "hevc": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_3/hls-output-hevc/master.m3u8"
@@ -23,6 +26,7 @@
     },
     {
       "id": "vid_4",
+      "thumbnail": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_4/video_4_thumb.jpg",
       "playlists": {
         "avc": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_4/hls-output/master.m3u8",
         "hevc": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_4/hls-output-hevc/master.m3u8"
@@ -30,6 +34,7 @@
     },
     {
       "id": "vid_5",
+      "thumbnail": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_5/video_5_thumb.jpg",
       "playlists": {
         "avc": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_5/hls-output/master.m3u8",
         "hevc": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_5/hls-output-hevc/master.m3u8"
@@ -37,6 +42,7 @@
     },
     {
       "id": "vid_6",
+      "thumbnail": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_6/video_6_thumb.jpg",
       "playlists": {
         "avc": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_6/hls-output/master.m3u8",
         "hevc": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_6/hls-output-hevc/master.m3u8"
@@ -44,6 +50,7 @@
     },
     {
       "id": "vid_7",
+      "thumbnail": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_7/video_7_thumb.jpg",
       "playlists": {
         "avc": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_7/hls-output/master.m3u8",
         "hevc": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_7/hls-output-hevc/master.m3u8"
@@ -51,6 +58,7 @@
     },
     {
       "id": "vid_8",
+      "thumbnail": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_8/video_8_thumb.jpg",
       "playlists": {
         "avc": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_8/hls-output/master.m3u8",
         "hevc": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_8/hls-output-hevc/master.m3u8"
@@ -58,6 +66,7 @@
     },
     {
       "id": "vid_9",
+      "thumbnail": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_9/video_9_thumb.jpg",
       "playlists": {
         "avc": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_9/hls-output/master.m3u8",
         "hevc": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_9/hls-output-hevc/master.m3u8"
@@ -65,6 +74,7 @@
     },
     {
       "id": "vid_10",
+      "thumbnail": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_10/video_10_thumb.jpg",
       "playlists": {
         "avc": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_10/hls-output/master.m3u8",
         "hevc": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_10/hls-output-hevc/master.m3u8"
@@ -72,6 +82,7 @@
     },
     {
       "id": "vid_11",
+      "thumbnail": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_11/video_11_thumb.jpg",
       "playlists": {
         "avc": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_11/hls-output/master.m3u8",
         "hevc": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_11/hls-output-hevc/master.m3u8"
@@ -79,6 +90,7 @@
     },
     {
       "id": "vid_12",
+      "thumbnail": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_12/video_12_thumb.jpg",
       "playlists": {
         "avc": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_12/hls-output/master.m3u8",
         "hevc": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_12/hls-output-hevc/master.m3u8"
@@ -86,6 +98,7 @@
     },
     {
       "id": "vid_13",
+      "thumbnail": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_13/video_13_thumb.jpg",
       "playlists": {
         "avc": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_13/hls-output/master.m3u8",
         "hevc": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_13/hls-output-hevc/master.m3u8"
@@ -93,51 +106,58 @@
     },
     {
       "id": "vid_14",
+      "thumbnail": "https://raw.githubusercontent.com,linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_14/video_14_thumb.jpg",
       "playlists": {
-        "avc": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_14/hls-output/master.m3u8",
-        "hevc": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_14/hls-output-hevc/master.m3u8"
+        "avc": "https://raw.githubusercontent.com,linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_14/hls-output/master.m3u8",
+        "hevc": "https://raw.githubusercontent.com,linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_14/hls-output-hevc/master.m3u8"
       }
     },
     {
       "id": "vid_15",
+      "thumbnail": "https://raw.githubusercontent.com,linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_15/video_15_thumb.jpg",
       "playlists": {
-        "avc": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_15/hls-output/master.m3u8",
-        "hevc": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_15/hls-output-hevc/master.m3u8"
+        "avc": "https://raw.githubusercontent.com,linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_15/hls-output/master.m3u8",
+        "hevc": "https://raw.githubusercontent.com,linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_15/hls-output-hevc/master.m3u8"
       }
     },
     {
       "id": "vid_16",
+      "thumbnail": "https://raw.githubusercontent.com,linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_16/video_16_thumb.jpg",
       "playlists": {
         "avc": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_16/hls-output/master.m3u8",
-        "hevc": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_16/hls-output-hevc/master.m3u8"
+        "hevc": "https://raw.githubusercontent.com,linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_16/hls-output-hevc/master.m3u8"
       }
     },
     {
       "id": "vid_17",
+      "thumbnail": "https://raw.githubusercontent.com,linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_17/video_17_thumb.jpg",
       "playlists": {
         "avc": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_17/hls-output/master.m3u8",
-        "hevc": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_17/hls-output-hevc/master.m3u8"
+        "hevc": "https://raw.githubusercontent.com,linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_17/hls-output-hevc/master.m3u8"
       }
     },
     {
       "id": "vid_18",
+      "thumbnail": "https://raw.githubusercontent.com,linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_18/video_18_thumb.jpg",
       "playlists": {
-        "avc": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_18/hls-output/master.m3u8",
-        "hevc": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_18/hls-output-hevc/master.m3u8"
+        "avc": "https://raw.githubusercontent.com,linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_18/hls-output/master.m3u8",
+        "hevc": "https://raw.githubusercontent.com,linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_18/hls-output-hevc/master.m3u8"
       }
     },
     {
       "id": "vid_19",
+      "thumbnail": "https://raw.githubusercontent.com,linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_19/video_19_thumb.jpg",
       "playlists": {
         "avc": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_19/hls-output/master.m3u8",
-        "hevc": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_19/hls-output-hevc/master.m3u8"
+        "hevc": "https://raw.githubusercontent.com,linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_19/hls-output-hevc/master.m3u8"
       }
     },
     {
       "id": "vid_20",
+      "thumbnail": "https://raw.githubusercontent.com,linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_20/video_20_thumb.jpg",
       "playlists": {
-        "avc": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_20/hls-output/master.m3u8",
-        "hevc": "https://raw.githubusercontent.com/linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_20/hls-output-hevc/master.m3u8"
+        "avc": "https://raw.githubusercontent.com,linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_20/hls-output/master.m3u8",
+        "hevc": "https://raw.githubusercontent.com,linslouis/server_m3u8_test/refs/heads/video_list_pager/assets/video_lib/vid_20/hls-output-hevc/master.m3u8"
       }
     }
   ]
